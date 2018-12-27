@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+
+    <% include ./partials/navbar.ejs %>
+
+        <header class="jumbotron my-4" style="text-align: center;">
+          <h1 class="display-3">Welcome to Findmycalories</h1>
+          <p class="lead">A simple, easy to use application that shows calories for your specific goal.</p>
+          <a href="#" class="btn btn-primary btn-lg">Sign up</a>
+        </header>
+
+        <section class="row text-center">
+
+          <section class="col-lg-4">
+            <i class="icon ion-md-person"></i>
+            <h4 class="card-title">Create a Profile</h4>
+            <p class="card-text">First, create a profile using a username or email.</p>
+          </section>
+
+          <section class="col-lg-4">
+            <i class="icon ion-md-calculator"></i>
+            <h4 class="card-title">Input Info</h4>
+            <p class="card-text">Second, input your gender, age, height, weight, and activity level.</p>
+          </section>
+
+          <section class="col-lg-4">
+            <i class="icon ion-md-pie"></i>
+            <h4 class="card-title">Get Calories</h4>
+            <p class="card-text">Receive calories based on your goal!</p>
+          </section>
+
+        </section>
+
+      <% include ./partials/baseScripts.ejs %>
+    </body>
+</html>
