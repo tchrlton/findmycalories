@@ -1,5 +1,5 @@
 .jumbotron {
-    height: 60vh;
+    height: 50vh;
     width: 100vw;
     background: url("../home-page-jumbotron.jpg") center;
     background-size: cover;
@@ -11,11 +11,11 @@
 
 .display-3 {
     position: relative;
-    bottom: 0px;
+    bottom: 10px;
 }
 
 .lead {
-    margin: 70px;
+    margin: 50px;
     padding-top: 10px;
 }
 
@@ -36,4 +36,8 @@
 .row {
     padding-right: 0px;
     margin-right: 0px;
+}
+
+.footer-text {
+    margin: 40px;
 }
