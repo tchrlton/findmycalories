@@ -5,6 +5,14 @@
     background-size: cover;
 }
 
+.sign-up-body { 
+    padding-top: 50px; 
+}
+
+.sign-in-body {
+    padding-top: 50px;
+}
+
 .display-3, .lead {
     color: white;
 }
@@ -31,6 +39,10 @@
 
 .btn-primary:hover {
     background-color: green;
+}
+
+.btn-lg {
+    margin-right: 15px;
 }
 
 .row {
