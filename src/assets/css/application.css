@@ -13,6 +13,10 @@
     padding-top: 50px;
 }
 
+.profile-body {
+    padding-top: 50px;
+}
+
 .display-3, .lead {
     color: white;
 }
@@ -48,6 +52,77 @@
 .row {
     padding-right: 0px;
     margin-right: 0px;
+}
+
+.profile-greeting {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.calc-title {
+    border-style: hidden;
+    background-color: green;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.calorie-title {
+    border-style: hidden;
+    background-color: green;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.calc-input-group {
+    text-align: left;
+    padding-left: 140px;
+}
+
+.age {
+    padding-top: 20px;
+}
+
+.calc-body {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.calc-input {
+    border-radius: 5px;
+    width: 60px;
+}
+
+.left-label {
+    padding-right: 15px;
+}
+
+.calc-submit {
+    margin-bottom: 10px;
+}
+
+.cal-results {
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    padding-left: 200px;
+    margin-left: 0px;
+}
+
+.cal-numbers {
+    text-align: center;
+
+}
+
+.cal-results {
+    padding-top: 30px;
+}
+
+.cal-description {
+    padding-right: 50px;
+}
+
+.cal-total-label {
+    padding-left: 20px;
 }
 
 .footer-text {

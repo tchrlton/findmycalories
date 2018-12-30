@@ -100,4 +100,38 @@ describe("routes : users", () => {
  
     });
 
+    describe("GET /users/:id", () => {
+      beforeEach((done) => {
+
+        this.user;
+
+        User.create({
+          username: "hello1",
+          email: "starman@tesla.com",
+          password: "password123"
+        })
+        .then((res) => {
+          this.user = res;
+          done();
+        })
+      });
+
+      it("should show username in profile page", (done) => {
+        request.get(`${base}${this.user.id}`, (err, res, body) => {
+
+          User.findOne({where: {id: this.user.id}})
+          .then((user) => {
+            expect(user).not.toBeNull();
+            expect(user.id).toBe(1);
+            expect(body).toContain(user.username);
+            done();
+          })
+          .catch((err) => {
+            console.log(err);
+            done();
+          });
+        })
+      })
+    });
+
 });
