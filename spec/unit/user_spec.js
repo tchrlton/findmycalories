@@ -1,19 +1,43 @@
 const sequelize = require("../../src/db/models/index").sequelize;
 const User = require("../../src/db/models").User;
+const Nutrition = require("../../src/db/models").Nutrition;
 
 describe("User", () => {
 
   beforeEach((done) => {
-    sequelize.sync({force: true})
-    .then(() => {
-      done();
-    })
-    .catch((err) => {
-      console.log(err);
-      done();
-    });
+    this.nutrition;
+    this.user;
 
-  });
+    sequelize.sync({force:true}).then((res) => {
+
+        User.create({
+            username: "hello1",
+            email: "email@example.com",
+            password: "pass123"
+        })
+        .then((user) => {
+            this.user = user;
+
+            Nutrition.create({
+                age: 20,
+                gender: "male",
+                weight: 141,
+                height: 70,
+                activity: 1.375,
+
+                userId: this.user.id
+            })
+            .then((nutrition) => {
+                this.nutrition = nutrition;
+                done();
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+            done();
+        });
+    });
+});
 
   describe("#create()", () => {
 
@@ -26,7 +50,7 @@ describe("User", () => {
       .then((user) => {
         expect(user.username).toBe("hello1");
         expect(user.email).toBe("user@example.com");
-        expect(user.id).toBe(1);
+        expect(user.id).toBe(2);
         done();
       })
       .catch((err) => {
@@ -79,6 +103,18 @@ describe("User", () => {
       });
     });
 
+  });
+
+  describe("#getNutrition()", () => {
+
+    it("should return the associated nutrition object", (done) => {
+
+      this.nutrition.getUser()
+      .then((associatedNutrition) => {
+        expect(associatedNutrition.id).toBe(1);
+        done();
+      });
+    });
   });
 
 });
