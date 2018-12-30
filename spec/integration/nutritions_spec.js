@@ -1,3 +1,6 @@
+const request = require("request");
+const server = require("../../src/server");
+const base = "http://localhost:3000/";
 const sequelize = require("../../src/db/models/index").sequelize;
 const Nutrition = require("../../src/db/models").Nutrition;
 const User = require("../../src/db/models").User;
@@ -37,5 +40,17 @@ describe("Nutrition", () => {
                 done();
             });
         });
+    });
+
+    describe("GET /users/:id/new_nutrition", () => {
+
+        it("should render a new nutrition form", (done) => {
+          request.get(`${base}/users/:id/new_nutrition`, (err, res, body) => {
+            expect(err).toBeNull();
+            expect(body).toContain("DAILY CALORIE CALCULATOR");
+            done();
+          });
+        });
+    
     });
 });
