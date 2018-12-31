@@ -3,6 +3,6 @@ const router = express.Router();
 
 const nutritionController = require("../controllers/nutritionController");
 
-router.get("/users/:id/new_nutrition", nutritionController.new);
+router.post("users/:id/nutrition/create", nutritionController.create);
 
 module.exports = router;

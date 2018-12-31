@@ -8,8 +8,8 @@ const User = require("../../src/db/models").User;
 describe("Nutrition", () => {
 
     beforeEach((done) => {
-        this.nutrition;
         this.user;
+        this.nutrition;
 
         sequelize.sync({force:true}).then((res) => {
 
@@ -42,15 +42,48 @@ describe("Nutrition", () => {
         });
     });
 
-    describe("GET /users/:id/new_nutrition", () => {
+    describe("GET /users/:id", () => {
 
-        it("should render a new nutrition form", (done) => {
-          request.get(`${base}/users/:id/new_nutrition`, (err, res, body) => {
+        it("should render a nutrition form", (done) => {
+          request.get(`${base}users/${this.user.id}`, (err, res, body) => {
             expect(err).toBeNull();
             expect(body).toContain("DAILY CALORIE CALCULATOR");
             done();
           });
         });
     
+    });
+
+    describe("POST /users/:id/nutrition/create", () => {
+        const options = {
+            url: `${base}users/${this.user.id}/nutrition/create`,
+            form: {
+                age: 20,
+                gender: "male",
+                weight: 141,
+                height: 70,
+                activity: '1.375'
+            }
+        };
+
+        it("should create a new nutrition object and redirect", (done) => {
+
+            request.post(options, (err, res, body) => {
+                Nutrition.findOne({where: {age: 20}})
+                .then((nutrition) => {
+                    expect(res.statusCode).toBe(303);
+                    expect(nutrition.age).toBe(20);
+                    expect(nutrition.gender).toBe("male");
+                    expect(nutrition.weight).toBe(141);
+                    expect(nutrition.height).toBe(70);
+                    expect(nutrition.activity).toBe('1.375');
+                    done();
+                })
+                .catch((err) => {
+                    console.log(err);
+                    done();
+                });
+            });
+        });
     });
 });
