@@ -10,5 +10,16 @@ module.exports = {
         .catch((err) => {
             callback(err);
         })
+    },
+
+    getNutrition(id, callback){
+        return Nutrition.findById(id)
+        .then((nutrition) => {
+            callback(null, nutrition);
+            console.log(nutrition);
+        })
+        .catch((err) => {
+            callback(err);
+        })
     }
 }

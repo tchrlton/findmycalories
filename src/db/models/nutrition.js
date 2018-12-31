@@ -24,6 +24,9 @@ module.exports = (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    calories: {
+      type: DataTypes.INTEGER
     }
   }, {});
   Nutrition.associate = function(models) {
