@@ -9,7 +9,7 @@ module.exports = {
             gender: req.body.gender,
             weight: req.body.weight,
             height: req.body.height,
-            activity: req.body.activity,
+            activity: parseFloat(req.body.activity),
             userId: req.params.id
         };
         nutritionQueries.addNutrition(newNutrition, (err, topic) => {
@@ -17,7 +17,7 @@ module.exports = {
                 console.log(err);
                 res.redirect(500, `/users/show`);
             } else {
-                res.redirect(303, `/users/show`);
+                res.redirect(303, `/users/${req.params.id}`);
             }
         });
     }
