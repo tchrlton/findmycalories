@@ -10,13 +10,14 @@ module.exports = {
             weight: req.body.weight,
             height: req.body.height,
             activity: req.body.activity,
-            userId: req.user.id
+            userId: req.params.id
         };
         nutritionQueries.addNutrition(newNutrition, (err, topic) => {
             if(err){
-                res.redirect(500, `/users/${this.user.id}`);
+                console.log(err);
+                res.redirect(500, `/users/show`);
             } else {
-                res.redirect(303, `/users/${this.user.id}`);
+                res.redirect(303, `/users/show`);
             }
         });
     }

@@ -55,21 +55,23 @@ describe("Nutrition", () => {
     });
 
     describe("POST /users/:id/nutrition/create", () => {
-        const options = {
-            url: `${base}users/${this.user.id}/nutrition/create`,
-            form: {
-                age: 20,
-                gender: "male",
-                weight: 141,
-                height: 70,
-                activity: '1.375'
-            }
-        };
 
         it("should create a new nutrition object and redirect", (done) => {
 
+            const options = {
+                url: `${base}users/${this.user.id}/nutrition/create`,
+                form: {
+                    age: 20,
+                    gender: "male",
+                    weight: 141,
+                    height: 70,
+                    activity: '1.375',
+                    userId: this.user.id
+                }
+            };
+
             request.post(options, (err, res, body) => {
-                Nutrition.findOne({where: {age: 20}})
+                Nutrition.findOne({where: {userId: `${this.user.id}`}})
                 .then((nutrition) => {
                     expect(res.statusCode).toBe(303);
                     expect(nutrition.age).toBe(20);
@@ -77,6 +79,7 @@ describe("Nutrition", () => {
                     expect(nutrition.weight).toBe(141);
                     expect(nutrition.height).toBe(70);
                     expect(nutrition.activity).toBe('1.375');
+                    expect(nutrition.userId).not.toBeNull();
                     done();
                 })
                 .catch((err) => {

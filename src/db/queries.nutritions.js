@@ -3,14 +3,7 @@ const User = require("./models").User;
 
 module.exports = {
     addNutrition(newNutrition, callback){
-        return Nutrition.create({
-            age: newNutrition.age,
-            gender: newNutrition.gender,
-            weight: newNutrition.weight,
-            height: newNutrition.height,
-            activity: newNutrition.activity,
-            userId: newNutrition.userId
-        })
+        return Nutrition.create(newNutrition)
         .then((nutrition) => {
             callback(null, nutrition);
         })
