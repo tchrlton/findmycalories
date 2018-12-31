@@ -25,12 +25,13 @@ module.exports = {
     },
     show(req, res, next){
         nutritionQueries.getNutrition(req.body.id, (err, nutrition) => {
+            console.log(req.body.id);
             console.log(nutrition);
             if(err || nutrition == null){
                 res.redirect(404, "/");
             } else {
-                res.render('users/show', {nutrition});
                 console.log(nutrition);
+                res.render('nutrition/show', {nutrition});
             }
         });
     }

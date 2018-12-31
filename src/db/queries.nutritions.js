@@ -16,7 +16,6 @@ module.exports = {
         return Nutrition.findById(id)
         .then((nutrition) => {
             callback(null, nutrition);
-            console.log(nutrition);
         })
         .catch((err) => {
             callback(err);

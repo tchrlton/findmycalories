@@ -60,24 +60,7 @@
               </div>
               <button type="submit" class="btn btn-primary calc-submit">Submit</button>
           </form>
-          <h2 class="calorie-title">TOTAL DAILY CALORIES</h2>
-          <div class="cal-results row">
-           <div class="weight-gain column">
-              <p class="cal-description">Weight Gain:</p>
-              <p class="cal-description">Maintenance:</p>
-              <p class="cal-description">Weight Loss:</p>
-           </div>
-           <div class="maintenance column">
-              <p class="calorie-numbers">Cal #</p>
-              <p class="calorie-numbers"><%= nutrition.calories %></p>
-              <p class="calorie-numbers">Cal #</p>
-           </div>
-           <div class="maintenance column">
-              <p class="cal-total-label">Calories/Day</p>
-              <p class="cal-total-label">Calories/Day</p>
-              <p class="cal-total-label">Calories/Day</p>
-           </div>
-          </div>
+          <a href="/users/<%= user.id %>/nutrition" class="btn btn-primary nutrition-profile-btn">Your Nutrition Profile</a>
          </div>
          <div class="col-lg-2">
          </div>
