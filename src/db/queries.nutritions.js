@@ -3,7 +3,7 @@ const User = require("./models").User;
 
 module.exports = {
     addNutrition(newNutrition, callback){
-        return Nutrition.create(newNutrition)
+        return Nutrition.upsert(newNutrition, {returning: true})
         .then((nutrition) => {
             callback(null, nutrition);
         })
@@ -12,13 +12,20 @@ module.exports = {
         })
     },
 
-    getNutrition(id, callback){
-        return Nutrition.findById(id)
+    getNutrition(userId, callback){
+        return Nutrition.findOne({
+            where: {userId: userId}
+        })
         .then((nutrition) => {
-            callback(null, nutrition);
+          console.log("--DEBUG getNutrition Query--");
+          console.log(`Looking for ID {${userId}}`);
+          console.dir(nutrition);
+          console.log(`\n\n`);
+          callback(null, nutrition);
         })
         .catch((err) => {
-            callback(err);
+            console.log(err);
+          callback(err);
         })
-    }
+    },
 }

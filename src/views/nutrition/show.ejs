@@ -24,9 +24,16 @@
                     <p class="cal-description">Weight Loss:</p>
                  </div>
                  <div class="maintenance column">
-                    <p class="calorie-numbers">Cal #</p>
-                    <p class="calorie-numbers">Cal #</p>
-                    <p class="calorie-numbers">Cal #</p>
+                   <% if(nutrition.gender === "male") { %>
+                    <p class="calorie-numbers"><%= nutrition.calories + 5 + 250 %></p>
+                    <p class="calorie-numbers"><%= nutrition.calories + 5 %></p>
+                    <p class="calorie-numbers"><%= nutrition.calories + 5 - 250 %></p>
+                   <% } %>
+                   <% if(nutrition.gender === "female") { %>
+                    <p class="calorie-numbers"><%= nutrition.calories - 161 + 250 %></p>
+                    <p class="calorie-numbers"><%= nutrition.calories - 161 %></p>
+                    <p class="calorie-numbers"><%= nutrition.calories - 161 - 250 %></p>
+                   <% } %>
                  </div>
                  <div class="maintenance column">
                     <p class="cal-total-label">Calories/Day</p>

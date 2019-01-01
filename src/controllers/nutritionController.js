@@ -14,23 +14,22 @@ module.exports = {
             calories: Math.round(((10 * (req.body.weight / 2.2) + (6.25 * (req.body.height * 2.54)) - (5 * req.body.age))))
         };
         nutritionQueries.addNutrition(newNutrition, (err, nutrition) => {
-            if(err){
-                console.log(err);
-                res.redirect(500, `/users`);
-            } else {
-                console.log(newNutrition);
-                res.redirect(303, `/users/${req.params.id}`);
-            }
+                    if(err){
+                        console.log(err);
+                        res.redirect(500, `/users`);
+                    } else {
+                        console.log(newNutrition);
+                        res.redirect(303, `/users/${req.params.id}/nutrition`);
+                    }
         });
     },
     show(req, res, next){
-        nutritionQueries.getNutrition(req.body.id, (err, nutrition) => {
-            console.log(req.body.id);
+        nutritionQueries.getNutrition(req.user.id, (err, nutrition) => {
+            console.log("-----nutrition log-----");
             console.log(nutrition);
             if(err || nutrition == null){
                 res.redirect(404, "/");
             } else {
-                console.log(nutrition);
                 res.render('nutrition/show', {nutrition});
             }
         });
