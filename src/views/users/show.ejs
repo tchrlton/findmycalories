@@ -19,65 +19,48 @@
          </div>
          <div class="col-lg-8">
           <h2 class="calc-title">DAILY CALORIE CALCULATOR</h2>
-          <form class="calc-body" action="">
+          <form class="calc-body" action="/users/<%= user.id %>/nutrition/create" method="post">
               <div class="form-group calc-input-group">
                 <label for="age" class="left-label age">Age</label>
-                <input class="calc-input" type="number" size="3" id="age">
+                <input class="calc-input" type="number" name="age" size="3" id="age">
                 <label class="inline">Years</label>
               </div>
               <div class="form-group calc-input-group">
                 <label for="gender" class="left-label">Gender</label>
                 <div class="form-check-inline">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="femradio">Female
+                        <input type="radio" class="form-check-input" name="gender" value="female">Female
                     </label>
                 </div>
                 <div class="form-check-inline">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="maleradio">Male
+                        <input type="radio" class="form-check-input" name="gender" value="male">Male
                     </label>
                 </div>
               </div>
               <div class="form-group calc-input-group">
                 <label for="weight" class="left-label">Current Weight</label>
-                <input class="calc-input" type="number" size="3" id="current-weight">
+                <input class="calc-input" type="number" size="3" name="weight" id="current-weight">
                 <label class="inline">Pounds</label>
               </div>
               <div class="form-group calc-input-group">
                 <label for="height" class="left-label">Height</label>
-                <input class="calc-input" type="number" size="2" id="height-inches">
+                <input class="calc-input" type="number" size="2" name="height" id="height-inches">
                 <label class="inline">Inches</label>
               </div>
               <div class="form-group calc-input-group">
                 <label for="activity" class="left-label">Activity</label>
-                <select class="activity" id="activity">
-                    <option value="1.2">Sedentary</option>
-                    <option value="1.375">Light Activity: 1-2 Days of Exercises/Week</option>
-                    <option selected="selected" value="1.55">Moderate Activity: 3 Days of Exercises/Week</option>
-                    <option value="1.725">Very Active: 4-5 Days of Exercises/Week</option>
-                    <option value="1.9">Extremely Active: 6-7 Days of Exercises/Week</option>
+                <select class="activity" name="activity" id="activity">
+                    <option value=1.2>Sedentary</option>
+                    <option value=1.375>Light Activity: 1-2 Days of Exercises/Week</option>
+                    <option selected="selected" value=1.55>Moderate Activity: 3 Days of Exercises/Week</option>
+                    <option value=1.725>Very Active: 4-5 Days of Exercises/Week</option>
+                    <option value=1.9>Extremely Active: 6-7 Days of Exercises/Week</option>
                 </select>
               </div>
               <button type="submit" class="btn btn-primary calc-submit">Submit</button>
           </form>
-          <h2 class="calorie-title">TOTAL DAILY CALORIES</h2>
-          <div class="cal-results row">
-           <div class="weight-gain column">
-              <p class="cal-description">Weight Gain:</p>
-              <p class="cal-description">Maintenance:</p>
-              <p class="cal-description">Weight Loss:</p>
-           </div>
-           <div class="maintenance column">
-              <p class="calorie-numbers">Cal #</p>
-              <p class="calorie-numbers">Cal #</p>
-              <p class="calorie-numbers">Cal #</p>
-           </div>
-           <div class="maintenance column">
-              <p class="cal-total-label">Calories/Day</p>
-              <p class="cal-total-label">Calories/Day</p>
-              <p class="cal-total-label">Calories/Day</p>
-           </div>
-          </div>
+          <a href="/users/<%= user.id %>/nutrition" class="btn btn-primary nutrition-profile-btn">Your Nutrition Profile</a>
          </div>
          <div class="col-lg-2">
          </div>

@@ -71,6 +71,7 @@
     background-color: green;
     color: white;
     margin-bottom: 0px;
+    margin-top: 50px;
 }
 
 .calc-input-group {
@@ -108,8 +109,9 @@
     margin-left: 0px;
 }
 
-.cal-numbers {
+.calorie-numbers {
     text-align: center;
+    font-weight: bold;
 
 }
 
@@ -123,6 +125,11 @@
 
 .cal-total-label {
     padding-left: 20px;
+}
+
+.nutrition-profile-btn {
+    color: white;
+    margin-top: 50px;
 }
 
 .footer-text {
