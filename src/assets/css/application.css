@@ -5,16 +5,20 @@
     background-size: cover;
 }
 
+.navbar-brand {
+    font-size: 1.5em;
+}
+
 .sign-up-body { 
-    padding-top: 50px; 
+    padding-top: 60px; 
 }
 
 .sign-in-body {
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .profile-body {
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .display-3, .lead {
