@@ -13,7 +13,9 @@ module.exports = {
             userId: req.params.id,
             calories: Math.round(((10 * (req.body.weight / 2.2) + (6.25 * (req.body.height * 2.54)) - (5 * req.body.age))))
         };
-        nutritionQueries.addNutrition(newNutrition, (err, nutrition) => {
+        nutritionQueries.getNutrition(req.params.id, (err, nutrition) => {
+            if(nutrition == null){
+                nutritionQueries.addNutrition(newNutrition, (err, nutrition) => {
                     if(err){
                         console.log(err);
                         res.redirect(500, `/users`);
@@ -21,10 +23,22 @@ module.exports = {
                         console.log(newNutrition);
                         res.redirect(303, `/users/${req.params.id}/nutrition`);
                     }
+                });
+            } else {
+                nutritionQueries.editNutrition(req.params.id, newNutrition, (err, nutrition) => {
+                    if(err){
+                        console.log(err);
+                        res.redirect(500, `/users`);
+                    } else {
+                        console.log(newNutrition);
+                        res.redirect(303, `/users/${req.params.id}/nutrition`);
+                    }
+                });
+            }
         });
     },
     show(req, res, next){
-        nutritionQueries.getNutrition(req.user.id, (err, nutrition) => {
+        nutritionQueries.getNutrition(req.params.id, (err, nutrition) => {
             console.log("-----nutrition log-----");
             console.log(nutrition);
             if(err || nutrition == null){
