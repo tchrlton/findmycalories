@@ -3,7 +3,7 @@
   <head>
     <% include ./partials/head.ejs %>
   </head>
-  <body>
+  <body class="index-body">
 
     <% include ./partials/navbar.ejs %>
 
@@ -13,31 +13,33 @@
           <a href="/users/sign_up" class="btn btn-primary btn-lg">Sign up</a>
         </header>
 
-        <section class="row text-center">
+        <div class="container-fluid">
+         <div class="row text-center">
 
-          <section class="col-lg-4">
+          <div class="col-lg-4">
             <i class="icon ion-md-person"></i>
             <h4 class="card-title">Create a Profile</h4>
             <p class="card-text">First, create a profile using a username or email.</p>
-          </section>
+          </div>
 
-          <section class="col-lg-4">
+          <div class="col-lg-4">
             <i class="icon ion-md-calculator"></i>
             <h4 class="card-title">Input Info</h4>
             <p class="card-text">Second, input your gender, age, height, weight, and activity level.</p>
-          </section>
+          </div>
 
-          <section class="col-lg-4">
+          <div class="col-lg-4">
             <i class="icon ion-md-pie"></i>
             <h4 class="card-title">Get Calories</h4>
             <p class="card-text">Receive calories based on your goal!</p>
-          </section>
+          </div>
 
-        </section>
+         </div>
+        </div>
 
-        <section class="footer-text text-center">
+        <div class="footer-text text-center">
             <h2>It's That Easy!</h2>
-        </section>
+        </div>
 
       <% include ./partials/baseScripts.ejs %>
     </body>
