@@ -1,8 +1,25 @@
+body {
+    overflow-x: hidden;
+}
+
 .jumbotron {
-    height: 50vh;
+    min-height: 50vh;
     width: 100vw;
-    background: url("../home-page-jumbotron.jpg") center;
+    background: url("../home-page-jumbotron.jpg") no-repeat center;
     background-size: cover;
+    background: contain;
+}
+
+@media(max-width: 768px){
+    h1{
+      font-size:55px!important;
+    }
+}
+    
+@media (max-width:525px){
+    h1{
+      font-size:45px!important;
+    }
 }
 
 .navbar-brand {
@@ -26,7 +43,6 @@
 }
 
 .display-3 {
-    position: relative;
     bottom: 10px;
 }
 
@@ -54,8 +70,8 @@
 }
 
 .row {
-    padding-right: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .profile-greeting {
