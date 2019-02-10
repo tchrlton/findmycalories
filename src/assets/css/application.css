@@ -20,6 +20,10 @@ body {
     h1{
       font-size:45px!important;
     }
+    tbody td{
+        font-size: 15px;
+    }
+    
 }
 
 .navbar-brand {
@@ -96,7 +100,7 @@ body {
 
 .calc-input-group {
     text-align: left;
-    padding-left: 140px;
+    padding-left: 20%;
 }
 
 .age {
@@ -117,6 +121,10 @@ body {
     padding-right: 15px;
 }
 
+select {
+    width: 8em;
+}
+
 .calc-submit {
     margin-bottom: 10px;
 }
@@ -125,8 +133,8 @@ body {
     border-style: solid;
     border-width: 1px;
     text-align: center;
-    padding-left: 200px;
     margin-left: 0px;
+    padding-top: 30px;
 }
 
 .calorie-numbers {
@@ -135,8 +143,8 @@ body {
 
 }
 
-.cal-results {
-    padding-top: 30px;
+.table td{
+    border-top: none !important;
 }
 
 .cal-description {

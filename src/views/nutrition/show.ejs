@@ -11,35 +11,59 @@
 
       <% include ../static/partials/messages.ejs %>
       
-      <div class="container calc-table">
+      <div class="container-fluid calc-table">
         <div class="row">
          <div class="col-lg-2">
          </div>
          <div class="col-lg-8">
                 <h2 class="calorie-title">TOTAL DAILY CALORIES</h2>
+
                 <div class="cal-results row">
-                 <div class="weight-gain column">
-                    <p class="cal-description">Weight Gain:</p>
-                    <p class="cal-description">Maintenance:</p>
-                    <p class="cal-description">Weight Loss:</p>
-                 </div>
-                 <div class="maintenance column">
-                   <% if(nutrition.gender === "male") { %>
-                    <p class="calorie-numbers"><%= nutrition.calories + 5 + 250 %></p>
-                    <p class="calorie-numbers"><%= nutrition.calories + 5 %></p>
-                    <p class="calorie-numbers"><%= nutrition.calories + 5 - 250 %></p>
-                   <% } %>
-                   <% if(nutrition.gender === "female") { %>
-                    <p class="calorie-numbers"><%= nutrition.calories - 161 + 250 %></p>
-                    <p class="calorie-numbers"><%= nutrition.calories - 161 %></p>
-                    <p class="calorie-numbers"><%= nutrition.calories - 161 - 250 %></p>
-                   <% } %>
-                 </div>
-                 <div class="maintenance column">
-                    <p class="cal-total-label">Calories/Day</p>
-                    <p class="cal-total-label">Calories/Day</p>
-                    <p class="cal-total-label">Calories/Day</p>
-                 </div>
+                 <% if(nutrition.gender === "male"){ %>
+                  <table class="table table-borderless">
+                    <thead class="table-header" style="display:none">
+                      <tr>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="weight-gain">Weight Gain:</td>
+                        <td class="calorie-numbers"><%= nutrition.calories + 5 + 250 %> Calories/Day</td>
+                      </tr>
+                      <tr>
+                        <td class="maintenance">Maintenance:</td>
+                        <td class="calorie-numbers"><%= nutrition.calories + 5 %> Calories/Day</td>
+                      </tr>
+                      <tr>
+                        <td class="weight-loss">Weight Loss:</td>
+                        <td class="calorie-numbers"><%= nutrition.calories + 5 - 250 %> Calories/Day</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 <% } %>
+
+                 <% if(nutrition.gender === "female"){ %>
+                  <table class="table table-borderless">
+                    <thead class="table-header" style="display:none">
+                      <tr>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="weight-gain">Weight Gain:</td>
+                        <td class="calorie-numbers"><%= nutrition.calories - 161 + 250 %> Calories/Day</td>
+                      </tr>
+                      <tr>
+                        <td class="maintenance">Maintenance:</td>
+                        <td class="calorie-numbers"><%= nutrition.calories - 161 %> Calories/Day</td>
+                      </tr>
+                      <tr>
+                        <td class="weight-loss">Weight Loss:</td>
+                        <td class="calorie-numbers"><%= nutrition.calories - 161 - 250 %> Calories/Day</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 <% } %>
                 </div>
          </div>
          <div class="col-lg-2">

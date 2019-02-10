@@ -15,8 +15,7 @@
       
       <div class="container calc-table">
         <div class="row">
-         <div class="col-lg-2">
-         </div>
+         <div class="col-lg-2">&nbsp;</div>
          <div class="col-lg-8">
           <h2 class="calc-title">DAILY CALORIE CALCULATOR</h2>
           <form class="calc-body" action="/users/<%= user.id %>/nutrition/create" method="post">
@@ -51,9 +50,10 @@
               <div class="form-group calc-input-group">
                 <label for="activity" class="left-label">Activity</label>
                 <select class="activity" name="activity" id="activity">
+                    <option value="" disabled selected hidden>Activity Level</option>
                     <option value=1.2>Sedentary</option>
                     <option value=1.375>Light Activity: 1-2 Days of Exercises/Week</option>
-                    <option selected="selected" value=1.55>Moderate Activity: 3 Days of Exercises/Week</option>
+                    <option value=1.55>Moderate Activity: 3 Days of Exercises/Week</option>
                     <option value=1.725>Very Active: 4-5 Days of Exercises/Week</option>
                     <option value=1.9>Extremely Active: 6-7 Days of Exercises/Week</option>
                 </select>
@@ -62,8 +62,7 @@
           </form>
           <a href="/users/<%= user.id %>/nutrition" class="btn btn-primary nutrition-profile-btn">Your Nutrition Profile</a>
          </div>
-         <div class="col-lg-2">
-         </div>
+         <div class="col-lg-2">&nbsp;</div>
         </div>
       </div>
 
