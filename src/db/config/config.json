@@ -25,6 +25,6 @@
     "dialect": "postgres",
     "logging": false,
     "operatorsAliases": false,
-    "db": "DATABASE_URL"
+    "use_env_variable": "DATABASE_URL"
   }
 }
