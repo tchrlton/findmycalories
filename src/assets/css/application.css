@@ -1,165 +1,165 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
 }
 
 .jumbotron {
-    min-height: 50vh;
-    width: 100vw;
-    background: url("../home-page-jumbotron.jpg") no-repeat center;
-    background-size: cover;
-    background: contain;
+  min-height: 50vh;
+  width: 100vw;
+  background: url("../home-page-jumbotron.jpg") no-repeat center;
+  background-size: cover;
+  background: contain;
 }
 
-@media(max-width: 768px){
-    h1{
-      font-size:55px!important;
-    }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 55px !important;
+  }
 }
-    
-@media (max-width:525px){
-    h1{
-      font-size:45px!important;
-    }
-    tbody td{
-        font-size: 15px;
-    }
-    
+
+@media (max-width: 525px) {
+  h1 {
+    font-size: 45px !important;
+  }
+  tbody td {
+    font-size: 15px;
+  }
 }
 
 .navbar-brand {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
-.sign-up-body { 
-    padding-top: 60px; 
+.sign-up-body {
+  padding-top: 60px;
 }
 
 .sign-in-body {
-    padding-top: 60px;
+  padding-top: 60px;
 }
 
 .profile-body {
-    padding-top: 60px;
+  padding-top: 60px;
 }
 
-.display-3, .lead {
-    color: white;
+.display-3,
+.lead {
+  color: white;
 }
 
 .display-3 {
-    bottom: 10px;
+  bottom: 10px;
 }
 
 .lead {
-    margin: 50px;
-    padding-top: 10px;
+  margin: 50px;
+  padding-top: 10px;
 }
 
 .icon {
-    font-size: 50px;
-    color: green;
+  font-size: 50px;
+  color: green;
 }
 
 .btn {
-    background-color: green;
-    border: green;
+  background-color: green;
+  border: green;
 }
 
 .btn-primary:hover {
-    background-color: green;
+  background-color: green;
 }
 
 .btn-lg {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .row {
-    margin-left: 0;
-    margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .profile-greeting {
-    padding-top: 20px;
-    padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .calc-title {
-    border-style: hidden;
-    background-color: green;
-    color: white;
-    margin-bottom: 0px;
+  border-style: hidden;
+  background-color: green;
+  color: white;
+  margin-bottom: 0px;
 }
 
 .calorie-title {
-    border-style: hidden;
-    background-color: green;
-    color: white;
-    margin-bottom: 0px;
-    margin-top: 50px;
+  border-style: hidden;
+  background-color: green;
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 50px;
 }
 
 .calc-input-group {
-    text-align: left;
-    padding-left: 20%;
+  text-align: left;
+  padding-left: 20%;
 }
 
 .age {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .calc-body {
-    border-style: solid;
-    border-width: 1px;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .calc-input {
-    border-radius: 5px;
-    width: 60px;
+  border-radius: 5px;
+  width: 60px;
 }
 
 .left-label {
-    padding-right: 15px;
+  padding-right: 15px;
 }
 
 select {
-    width: 8em;
+  width: 8em;
 }
 
 .calc-submit {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .cal-results {
-    border-style: solid;
-    border-width: 1px;
-    text-align: center;
-    margin-left: 0px;
-    padding-top: 30px;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  margin-left: 0px;
+  padding-top: 30px;
 }
 
 .calorie-numbers {
-    text-align: center;
-    font-weight: bold;
-
+  text-align: center;
+  font-weight: bold;
 }
 
-.table td{
-    border-top: none !important;
+.table td {
+  border-top: none !important;
 }
 
 .cal-description {
-    padding-right: 50px;
+  padding-right: 50px;
 }
 
 .cal-total-label {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .nutrition-profile-btn {
-    color: white;
-    margin-top: 50px;
+  color: white;
+  margin-top: 50px;
 }
 
 .footer-text {
-    margin: 40px;
+  margin: 40px;
 }
