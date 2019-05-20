@@ -40,6 +40,8 @@ body {
 }
 
 .sign-in-body .container .card {
+  display: flex;
+  justify-content: center;
   margin: 0 350px 0 350px;
   box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.2);
 }
@@ -78,10 +80,62 @@ body {
 
 .signin-form-container .btn {
   background-color: #31b237;
+  color: white;
+  margin-top: 35px;
+  font-size: 1.2rem;
 }
 
 .signin-form-container .btn:hover {
   background-color: #51ca58;
+}
+
+@media (max-width: 768px) {
+  .sign-in-body .container .card {
+    overflow: auto;
+    margin: 0 150px 0 150px;
+    box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+  }
+
+  .sign-in-body .container .main-title {
+    display: flex;
+    justify-content: center;
+    color: #222222;
+    margin-top: 70px;
+    margin-bottom: 1px;
+    font-size: 1.5rem;
+  }
+
+  .sign-in-body .container .signin-lead {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: #9e9e9e;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 525px) {
+  .sign-in-body .container .card {
+    overflow: auto;
+    margin: 0 25px 0 25px;
+    box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+  }
+
+  .sign-in-body .container .main-title {
+    display: flex;
+    justify-content: center;
+    color: #222222;
+    margin-top: 70px;
+    margin-bottom: 1px;
+    font-size: 1.5rem;
+  }
+
+  .sign-in-body .container .signin-lead {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: #9e9e9e;
+    margin-bottom: 25px;
 }
 
 .profile-body {
